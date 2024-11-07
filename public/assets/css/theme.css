@@ -2711,13 +2711,13 @@ progress {
   max-height: 200px;
 }
 
-.carousel-control-prev-icon {
+/* .carousel-control-prev-icon {
   filter: invert(100%);
 }
 
 .carousel-control-next-icon {
   filter: invert(100%);
-}
+} */
 
 .py-5 {
   padding-top: 3rem !important;
