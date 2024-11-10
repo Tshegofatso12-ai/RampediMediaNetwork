@@ -6833,6 +6833,16 @@ a.close.disabled {
   }
 }
 
+@media (max-width: 767px) {
+  .carousel-inner {
+    display: block !important; /* Ensure the carousel is visible on mobile */
+  }
+  
+  .carousel-item {
+    display: block !important; /* Force display of carousel items */
+  }
+}
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
@@ -6891,25 +6901,30 @@ a.close.disabled {
   top: 0;
   bottom: 0;
   z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: flex;  /* Use flex instead of legacy -webkit and -ms styles */
+  align-items: center;
+  justify-content: center;
   width: 15%;
-  color: #fff;
-  text-align: center;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.15s ease;
-  transition: opacity 0.15s ease;
+  background: none; /* Remove background */
+  border: none; /* Remove any border */
+  box-shadow: none; /* Remove shadow */
+  opacity: 0.5;  /* Set opacity for hover effect */
+  transition: opacity 0.15s ease; /* Smooth transition on hover */
 }
+
+/* Optionally: To add hover effect that makes the buttons more visible */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000; /* Set icon color */
+  width: 30px;  /* Adjust icon size if necessary */
+  height: 30px;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,

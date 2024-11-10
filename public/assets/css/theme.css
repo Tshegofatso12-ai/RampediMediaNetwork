@@ -2642,11 +2642,12 @@ progress {
 
 .team-details {
   text-align: justify;
+  color: #000
 }
 
 .team-member p {
   margin-bottom: 0;
-  color: #888;
+  color: #fff;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -7176,6 +7177,8 @@ fieldset:disabled .btn {
     transition: none;
   }
 }
+
+
 
 .carousel-control-prev,
 .carousel-control-next {
