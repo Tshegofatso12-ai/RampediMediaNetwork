@@ -12014,7 +12014,4 @@ textarea.form-control {
         margin-left: 0;
         max-width: 100%;
     }
-    .carousel {
-      display: none; /* Hides the carousel */
-  }
 }
