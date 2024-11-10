@@ -18826,6 +18826,116 @@ Calaendar icon input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom-color: #757575;
 }
 
+.ebook-container {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.ebook-container .imgBx img {
+  width: 400px;
+  left: -50px;
+  transition: .9s linear;
+}
+
+.ebook-container .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.ebook-container .details h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.4em;
+  line-height: 1em;
+  color: #fff;
+}
+
+.ebook-container .details h2 span {
+  font-size: 0.4em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.ebook-container .details p {
+  max-width: 85%;
+  margin-left: 15%;
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+
+.ebook-container .details h3 {
+  margin: 0;
+  padding: 0;
+  margin-right: 5%;
+  font-size: 2.5em;
+  color: #a2a2a2;
+  float: left;
+}
+
+.ebook-container .details button {
+  float: right;
+  margin-left: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .ebook-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ebook-container .imgBx img {
+    width: 100%; /* Full width on mobile */
+    max-width: none;
+    left: 0;
+  }
+
+  .ebook-container .details {
+    width: 100%; /* Full width on mobile */
+    padding: 20px;
+    text-align: center; /* Center-align content within details */
+  }
+
+  .ebook-container .details h2 {
+    font-size: 1.8em;
+  }
+
+  .ebook-container .details h2 span {
+    font-size: 0.5em;
+  }
+
+  .ebook-container .details p {
+    max-width: 100%;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .ebook-container .details h3 {
+    font-size: 1.8em;
+    text-align: center;
+    float: none;
+    margin-right: 0;
+  }
+
+  .ebook-container .details button,
+  .ebook-container .details .btn { /* Applies to both button and link styled as button */
+    float: none;
+    margin: 20px auto 0; /* Centers the button with top margin */
+    display: inline-block; /* Inline-block for proper margin */
+  }
+}
+
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/
