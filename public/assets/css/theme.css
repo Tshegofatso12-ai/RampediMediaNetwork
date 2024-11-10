@@ -5014,6 +5014,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
+  background-color: #000;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
