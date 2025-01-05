@@ -18940,6 +18940,14 @@ Calaendar icon input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+#studio-info {
+  padding-bottom: 0;
+}
+
+#contact {
+  padding-top: 0;
+}
+
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/
