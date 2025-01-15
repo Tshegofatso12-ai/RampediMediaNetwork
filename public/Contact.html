@@ -186,7 +186,10 @@
             <div class="row align-items-center">
                 <!-- Contact Information -->
                 <div class="col-md-5 my-3">
-                    <h6 class="text-secondary mb-0">Email</h6>
+                    <h6 class="text-secondary mb-0">Studio Bookings</h6>
+                    <p class="text-light mb-4">studio@rampedimedia.co.za</p>
+                </br>
+                <h6 class="text-secondary mb-0">General Inquiries</h6>
                     <p class="text-light mb-4">info@rampedimedia.co.za</p>
   
                 </div>
@@ -308,6 +311,44 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('#contact-form').on('submit', function (e) {
+              e.preventDefault(); // Prevent the default form submission
+  
+              // Remove any existing messages
+              $('.alert').remove();
+  
+              // Serialize form data
+              const formData = $(this).serialize();
+  
+              // Submit form via AJAX
+              $.ajax({
+                  type: 'POST',
+                  url: 'contact.php', // Path to your PHP script
+                  data: formData,
+                  dataType: 'json',
+                  success: function (response) {
+                      if (response.status === 'success') {
+                          // Display success message
+                          $('#contact-form').prepend('<div class="alert alert-success">' + response.message + '</div>');
+                          $('#contact-form')[0].reset(); // Reset the form
+                      } else {
+                          // Display error message
+                          $('#contact-form').prepend('<div class="alert alert-danger">' + response.message + '</div>');
+                      }
+                  },
+                  error: function () {
+                      // Handle AJAX error
+                      $('#contact-form').prepend('<div class="alert alert-danger">An error occurred. Please try again later.</div>');
+                  }
+              });
+          });
+      });
+  </script>
+  
+    
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
     <script src="vendors/is/is.min.js"></script>

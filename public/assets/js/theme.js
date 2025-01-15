@@ -381,58 +381,6 @@ $(document).ready(function() {
   });
 });
 
-// Get the form element
-const form = document.getElementById('contact-form');
-
-// Add event listener for form submission
-form.addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Get the form data
-  const formData = new FormData(form);
-
-  // Send the form data to your server-side script using fetch or XMLHttpRequest
-  fetch('assets/php/form-handler.php', {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => {
-      // Handle the response from the server
-      if (response.ok) {
-        // Display success message or perform any desired action
-        const successAlert = document.createElement('div');
-        successAlert.classList.add('alert', 'alert-success', 'alert-dismissible', 'fade', 'show');
-        successAlert.setAttribute('role', 'alert');
-        successAlert.innerHTML = 'Form submitted successfully' +
-          '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-          '<span aria-hidden="true">&times;</span>' +
-          '</button>';
-
-        // Append the success message after the 'Get In Touch' heading
-        const getInTouchHeading = document.querySelector('.contact-form');
-        getInTouchHeading.parentNode.insertBefore(successAlert, getInTouchHeading.nextSibling);
-        // Reset the form fields
-          form.reset();
-      } else {
-        // Display error message or perform any desired action
-        const errorAlert = document.createElement('div');
-        errorAlert.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
-        errorAlert.setAttribute('role', 'alert');
-        errorAlert.innerHTML = 'There was an issue submitting the form.' +
-          '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-          '<span aria-hidden="true">&times;</span>' +
-          '</button>';
-
-        // Append the error message after the 'Get In Touch' heading
-        const getInTouchHeading = document.querySelector('.contact-form');
-        getInTouchHeading.parentNode.insertBefore(errorAlert, getInTouchHeading.nextSibling);
-      }
-    })
-    .catch(error => {
-      // Display error message or perform any desired action
-      console.error('Error:', error);
-    });
-});
 
 $(document).ready(function() {
   // Set the interval to auto advance the slides
